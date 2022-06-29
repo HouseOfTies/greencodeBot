@@ -25,15 +25,21 @@ async function startBot() {
 
       bot.on("message", async (message) => {
         const chatId = message.chat.id;
-        const newMember = "@"+message.new_chat_member.username || message.new_chat_member.first_name;
-        const leftMember = message.left_chat_member.first_name;
 
         if (message.new_chat_members != undefined) {
+          const newMember: any =
+            message.new_chat_member.username === undefined
+              ? message.new_chat_member.first_name
+              : "@" + message.new_chat_member.username;
           bot.sendMessage(
             chatId,
             `Bienvenido/a ${newMember} a ECO | GreenCode, gracias por sumarte a la experiencia de dejar huellas de vida.\n𝑻𝒉𝒊𝒔 𝒊𝒔 𝒇𝒐𝒓 𝒚𝒐𝒖 💚🍃`
           );
         } else if (message.left_chat_member != undefined) {
+          const leftMember: any =
+            message.left_chat_member.username === undefined
+              ? message.left_chat_member.first_name
+              : "@" + message.left_chat_member.username;
           bot.sendMessage(chatId, leftMember + " abandonó el verde futuro.");
         }
         console.log(message);
