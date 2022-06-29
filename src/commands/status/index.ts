@@ -3,6 +3,7 @@ export default function status(bot: any, message: any) {
     messageId = message.message_id;
 
   const response = `*GreenCode Status*:
+  
 *GreenCoders:* 0 🔰
 
 *Eco-Colaboradores:* 0 🫂
