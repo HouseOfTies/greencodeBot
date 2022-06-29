@@ -14,5 +14,5 @@ export default function status(bot: any, message: any) {
 *Puntos verdes recuperados:* 0 🌳
 `
 
-  bot.sendMessage(chatId, response, { reply_to_message: messageId, reply_markup: "Markdown" });
+  bot.sendMessage(chatId, response, { reply_to_message: messageId, parse_mode: "Markdown" });
 }
