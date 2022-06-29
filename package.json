@@ -1,0 +1,34 @@
+{
+  "name": "greencodebot",
+  "version": "0.0.1",
+  "description": "Oficial bot of GreenCode",
+  "main": "src/bot.ts",
+  "scripts": {
+    "build": "tsc",
+    "heroku-postbuild": "npm run build",
+    "start": "ts-node -r tsconfig-paths/register --transpile-only ./src/bot.ts",
+    "inspect": "nodemon --inspect src/bot.ts",
+    "test": "jest",
+    "lint": "npm run lint:js ",
+    "lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
+    "lint:js": "npm run lint:eslint src/",
+    "lint:fix": "npm run lint:js -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softdevscommunity/Xhibalbabot.git"
+  },
+  "keywords": [],
+  "author": "Seventty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/softdevscommunity/Xhibalbabot/issues"
+  },
+  "homepage": "https://github.com/softdevscommunity/Xhibalbabot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.58.0",
+    "ts-dedent": "^2.2.0",
+    "ts-node": "^10.8.1",
+    "tsconfig-paths": "^4.0.0"
+  }
+}
